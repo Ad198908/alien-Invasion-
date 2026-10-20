@@ -1,5 +1,18 @@
+"""
+    Project name: Alien Invation Game
+    Author:Adhanet Gebretensay
+    Purpose:To Store and manage all game configrations.
+    Starter code: Path
+    Date:10/20/2026
+
+"""
+
+
 from pathlib import Path
 class Settings:
+    """ 
+        A clss to store all settings.
+    """
 
     def __init__(self):
         self.name: str = 'Alien Invasion'

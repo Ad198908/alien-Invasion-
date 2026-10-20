@@ -1,3 +1,14 @@
+"""
+    Project name: Alien Invation Game
+    Author:Adhanet Gebretensay
+    Purpose:To manage active bullets, firing limit, update position, and clean up off-screen bullets.
+    Date:10/20/2026
+
+"""
+
+
+
+
 import pygame
 from bullet import Bullet
 from typing import TYPE_CHECKING
@@ -6,6 +17,8 @@ if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
     
 class Arsenal:
+    """ A class to manage all bullets fired by a ship"""
+
     def __init__(self,game:'AlienInvasion'):
         self.game = game
         self.settings = game.settings

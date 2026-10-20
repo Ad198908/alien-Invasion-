@@ -1,3 +1,10 @@
+"""
+    Project name: Alien Invation Game
+    Author:Adhanet Gebretensay
+    Purpose:To define the bullet class and managed.
+    Date:10/20/2026
+
+"""
 import pygame
 from pygame.sprite import Sprite
 from typing import TYPE_CHECKING
@@ -6,6 +13,8 @@ if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
 
 class Bullet(Sprite):
+    """ A class to manage bullets and fired from the ship."""
+
     def __init__(self,game:'AlienInvasion'):
         super().__init__()
         self.screen = game.screen

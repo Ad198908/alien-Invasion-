@@ -1,3 +1,14 @@
+"""
+    Project name: Alien Invation Game
+    Author:Adhanet Gebretensay
+    Purpose:To define the player's ship class, initialization, and movement.
+    Date:10/20/2026
+
+"""
+
+
+
+
 import pygame
 
 from typing import TYPE_CHECKING
@@ -8,7 +19,7 @@ if TYPE_CHECKING:
 
 
 class Ship:
-    
+    """ A class to store and manage the player's ship and movement"""
     def __init__(self,game:'AlienInvasion', arsenal: 'arsenal'):
         self.game = game
         self.settings = game.settings

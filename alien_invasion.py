@@ -1,3 +1,13 @@
+"""
+    Project name: Alien Invation Game
+    Author:Adhanet Gebretensay
+    Purpose:To build agame that has movement ,shooting, and enemies.
+    Starter code: Window setup,and game loop.
+    Date:10/20/2026
+
+"""
+
+
 import sys
 import pygame
 from settings import Settings
@@ -5,7 +15,11 @@ from ship import Ship
 from arsenal import Arsenal
 
 class AlienInvasion:
+    """
+      A class to manage game assets resorces , and beheavior.
+    """
     def __init__(self):
+
         pygame.init()
         self.settings = Settings()
         self.screen = pygame.display.set_mode((self.settings.screen_w,self.settings.screen_h))
@@ -28,8 +42,6 @@ class AlienInvasion:
             self.ship.update()
             self._update_screen()
             self.clock.tick(self.settings.fps)
-
-    
 
     def _update_screen(self):
         self.screen.blit(self.bg,(0,0))
