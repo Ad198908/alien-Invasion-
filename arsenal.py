@@ -10,6 +10,7 @@
 
 
 import pygame
+from alien import Alien
 from bullet import Bullet
 from typing import TYPE_CHECKING
 
