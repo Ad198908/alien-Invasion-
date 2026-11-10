@@ -40,8 +40,7 @@ class Ship:
         self.rect.midbottom = self.boundaries.midbottom
         self.x = float(self.rect.x)
 
-    
-        
+         
     def update(self):
         self._update_ship_movement()
         self.arsenal.update_arsenal()
@@ -53,7 +52,7 @@ class Ship:
         if self.moving_left and self.rect.left > self.boundaries.left:
          self.x -= temp_speed
 
-         self.rect.x = self.x
+        self.rect.x = self.x
 
 
 

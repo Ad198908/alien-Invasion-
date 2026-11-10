@@ -45,7 +45,7 @@ class AlienInvasion:
 
         self.ship = Ship(self,Arsenal(self))
         self.alien_fleet = Alienfleet(self)
-        self.alien_fleet.create_fleet()
+        # self.alien_fleet.create_fleet()
         self.game_active = True
         # self.alien = Alien(self,10 ,10)
 
@@ -80,18 +80,11 @@ class AlienInvasion:
            
            self._reset_level()
 
-    
 
-
-
-
-        
-           
-           
 
     def _check_game_status(self):
+        self.game_stats.ships_left -= 1
         if self.game_stats.ships_left > 0:
-           self.game_stats.ships_left -= 1
            self._reset_level()
            sleep(0.5)
         else:
