@@ -16,7 +16,7 @@ from ship import Ship
 from arsenal import Arsenal
 #from alien import Alien
 from alien_fleet import Alienfleet
-from time import Sleep
+from time import sleep
 from button import Button
 
 
