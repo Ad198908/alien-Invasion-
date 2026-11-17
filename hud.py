@@ -21,7 +21,7 @@ class HUD:
         
        
         def setup_life_image(self):
-             self.life_image = pygame.image.load(self.settings.ship_file)
+             self.life_image = pygame.image.load(self.settings.ant_file)
              self.life_image = pygame.transform.scale(self.life_image, (self.settings.ship_w, self.settings.ship_h
                                                                         ))
              self.life_rect = self.life_image.get_rect()

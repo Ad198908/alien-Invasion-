@@ -1,8 +1,8 @@
 """
-    Project name: Alien Invation Game
+    Project name: Ant defence Game
     Author:Adhanet Gebretensay
-    Purpose:To define the player's ship class, initialization, and movement.
-    Date:10/20/2026
+    Purpose:To define the player's ant class, initialization, and movement.
+    Date:11/17/2026
 
 """
 
@@ -15,15 +15,15 @@ if TYPE_CHECKING:
    from arsenal import arsenal
 
 
-class Ship:
-    """ A class to store and manage the player's ship and movement"""
+class Ant:
+    """ A class to store and manage the player's ant and movement"""
     def __init__(self,game:'AlienInvasion', arsenal: 'arsenal'):
         self.game = game
         self.settings = game.settings
         self.screen = game.screen
         self.boundaries = self.screen.get_rect()
 
-        self.image = pygame.image.load(self.settings.  ship_file)
+        self.image = pygame.image.load(self.settings.ant_file)
         self.image = pygame.transform.scale(self.image, (self.settings.ship_w, self.settings.ship_h))
 
         self.rect = self.image.get_rect()

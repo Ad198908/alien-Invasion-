@@ -1,9 +1,9 @@
 """
-    Project name: Alien Invation Game
+    Project name: Ant Defence
     Author:Adhanet Gebretensay
-    Purpose:To build agame that has movement ,shooting, and enemies.
+    Purpose:To build agame that has movement , defending, and enemies.
     Starter code: Window setup,and game loop.
-    Date:10/20/2026
+    Date:11/17/2026
 
 """
 
@@ -11,7 +11,7 @@ import sys
 import pygame
 from settings import Settings
 from game_stats import GameStats
-from ship import Ship
+from ant import Ant
 from arsenal import Arsenal
 #from alien import Alien
 # from alien_fleet import Alienfleet
@@ -22,7 +22,7 @@ from arsenal import Arsenal
 
 class AlienInvasion:
     """
-      A class to manage game assets resorces , and beheavior.
+      A class to manage game assets resorces, and beheavior.
     """
     def __init__(self):
 
@@ -51,7 +51,7 @@ class AlienInvasion:
         self.impact_sound.set_volume(0.7)
 
 
-        self.ship = Ship(self,Arsenal(self))
+        self.ant = Ant(self, Arsenal(self))
         #self.alien_fleet = Alienfleet(self)
         # self.alien_fleet.create_fleet()
 
@@ -63,7 +63,7 @@ class AlienInvasion:
         while self.running:
             self._check_events()
             if self.game_active:  
-                self.ship.update()
+                self.ant.update()
                 #self.alien_fleet.update_fleet()
                 #self._check_collisions()
             self._update_screen()
@@ -71,7 +71,7 @@ class AlienInvasion:
 
     def _check_collisions(self):
         # check collisions for ship
-        if self.ship.check_collisions(self.alien_fleet.fleet):
+        if self.ant.check_collisions(self.alien_fleet.fleet):
             self._check_game_status()
          
          #  subtract one life if possible
@@ -81,7 +81,7 @@ class AlienInvasion:
             self._check_game_status()
         
         #check collisions of projectiles and aliens
-        collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)
+        collisions = self.alien_fleet.check_collisions(self.ant.arsenal.arsenal)
         if collisions:
             self.impact_sound.play()
             self.impact_sound.fadeout(500)
@@ -113,7 +113,7 @@ class AlienInvasion:
     
     
     def _reset_level(self):
-        self.ship.arsenal.arsenal.empty()
+        self.ant.arsenal.arsenal.empty()
         self.alien_fleet.fleet.empty()
         self.alien_fleet.create_fleet()
 
@@ -127,13 +127,13 @@ class AlienInvasion:
         
         
         self._reset_level()
-        self.ship._center_ship()
+        self.ant._center_ship()
         self.game_active = True
         pygame.mouse.set_visible(False)
          
     def _update_screen(self):
         self.screen.blit(self.bg,(0,0))
-        self.ship.draw()
+        self.ant.draw()
         # self.alien_fleet.draw()
         #draw Hud
         # self.HUD.draw()
@@ -166,18 +166,18 @@ class AlienInvasion:
 
     def _check_keyup_events(self,event):
         if event.key == pygame.K_RIGHT:
-            self.ship.moving_right = False
+            self.ant.moving_right = False
         elif event.key  == pygame.K_LEFT:
-            self.ship.moving_left = False
+            self.ant.moving_left = False
         
 
     def _check_keydown_events(self,event):
         if event.key == pygame.K_RIGHT:
-            self.ship.moving_right = True
+            self.ant.moving_right = True
         elif event.key  == pygame.K_LEFT:
-            self.ship.moving_left = True
+            self.ant.moving_left = True
         elif event.key == pygame.K_SPACE:
-            if self.ship.fire():
+            if self.ant.fire():
                 self.laser_sound.play()
                 self.laser_sound.fadeout(250)
 

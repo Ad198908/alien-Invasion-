@@ -24,7 +24,7 @@ class Bullet(Sprite):
         self.image = pygame.transform.scale(self.image, (self.settings.bullet_w, self.settings.bullet_h)
         )
         self.rect = self.image.get_rect()
-        self.rect.midtop = game.ship.rect.midtop
+        self.rect.midtop = game.ant.rect.midtop
         self.y = float(self.rect.y)
     def update(self):
         self.y -= self.settings.bullet_speed

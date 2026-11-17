@@ -1,9 +1,9 @@
 """
-    Project name: Alien Invation Game
+    Project name: ant Defence
     Author:Adhanet Gebretensay
     Purpose:To Store and manage all game configrations.
     Starter code: Path
-    Date:10/20/2026
+    Date:11/17/2026
 
 """
 
@@ -15,23 +15,23 @@ class Settings:
     """
 
     def __init__(self):
-        self.name: str = 'Alien Invasion'
+        self.name: str = 'Ant Defence'
         self.screen_w = 1000
         self.screen_h = 600
         self.FPS = 60
-        self.bg_file = Path.cwd()/'Assets'/'images'/'Starbasesnow.png'
+        self.bg_file = Path.cwd()/'Assets'/'images'/'grass.png'
         self.difficulty_scale = 1.1
         self.scores_file = Path.cwd()/ 'Assets'/'file'/ 'scores.json'
-        self.ship_file = Path.cwd()/'Assets'/'images'/ 'ship2(no bg).png'
+        self.ant_file = Path.cwd()/'Assets'/'images'/ 'ant.png'
         self.ship_w = 40
         self.ship_h = 60
         self.ship_speed = 5
         self.starting_ship_count = 3
-        self.bullet_file = Path.cwd()/'Assets'/'images'/'laserBlast.png'
-        self.laser_sound = Path.cwd()/'Assets'/'sound'/'laser.mp3'
+        self.bullet_file = Path.cwd()/'Assets'/'images'/'muzzle_04.png'
+        self.laser_sound = Path.cwd()/'Assets'/'sound'/'laser4.ogg'
         self.impact_sound= Path.cwd()/'Assets'/'sound'/'impactSound.mp3'
         self.bullet_speed = 7
-        self.bullet_w = 250
+        self.bullet_w = 350
         self.bullet_h = 88
         self.bullet_amount = 5
         self.alien_file = Path.cwd()/'Assets'/ 'images'/ 'enemy_4.png'
