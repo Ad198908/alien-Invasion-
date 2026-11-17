@@ -7,7 +7,6 @@
 
 """
 
-
 import sys
 import pygame
 from settings import Settings
@@ -15,10 +14,10 @@ from game_stats import GameStats
 from ship import Ship
 from arsenal import Arsenal
 #from alien import Alien
-from alien_fleet import Alienfleet
-from time import sleep
-from button import Button
-from hud import HUD
+# from alien_fleet import Alienfleet
+#from time import sleep
+#from button import Button
+#from hud import HUD
 
 
 class AlienInvasion:
@@ -39,7 +38,7 @@ class AlienInvasion:
         self.game_stats = GameStats(self)
                                     
                 
-        self.HUD = HUD(self)
+        #self.HUD = HUD(self)
         
         self.running = True
         self.clock = pygame.time.Clock()
@@ -53,10 +52,10 @@ class AlienInvasion:
 
 
         self.ship = Ship(self,Arsenal(self))
-        self.alien_fleet = Alienfleet(self)
+        #self.alien_fleet = Alienfleet(self)
         # self.alien_fleet.create_fleet()
 
-        self.play_button = Button(self, 'play')
+       # self.play_button = Button(self, 'play')
         self.game_active = False
         # self.alien = Alien(self,10 ,10)
 
@@ -65,8 +64,8 @@ class AlienInvasion:
             self._check_events()
             if self.game_active:  
                 self.ship.update()
-                self.alien_fleet.update_fleet()
-                self._check_collisions()
+                #self.alien_fleet.update_fleet()
+                #self._check_collisions()
             self._update_screen()
             self.clock.tick(self.settings.FPS)
 
@@ -107,18 +106,12 @@ class AlienInvasion:
         if  self.game_stats.ships_left > 0:
             self.game_stats.ships_left  -= 1
             self._reset_level()
-            sleep(0.5)
+            #sleep(0.5)
         else:
             self.game_active = False
-
-        
-        
-        
         print(self.game_stats.ships_left)
     
     
-    
-        
     def _reset_level(self):
         self.ship.arsenal.arsenal.empty()
         self.alien_fleet.fleet.empty()
@@ -137,19 +130,17 @@ class AlienInvasion:
         self.ship._center_ship()
         self.game_active = True
         pygame.mouse.set_visible(False)
-
-
          
     def _update_screen(self):
         self.screen.blit(self.bg,(0,0))
         self.ship.draw()
-        self.alien_fleet.draw()
+        # self.alien_fleet.draw()
         #draw Hud
-        self.HUD.draw()
+        # self.HUD.draw()
 
-        if not self.game_active:
-            self.play_button.draw()
-            pygame.mouse.set_visible(True)
+        # if not self.game_active:
+        #     self.play_button.draw()
+        #     pygame.mouse.set_visible(True)
 
         pygame.display.flip()
 
@@ -164,8 +155,8 @@ class AlienInvasion:
                 self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
                  self._check_keyup_events(event)
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                self._check_button_clicked()
+            # elif event.type == pygame.MOUSEBUTTONDOWN:
+            #     self._check_button_clicked()
 
     def _check_button_clicked(self):
         mouse_pos = pygame.mouse.get_pos()
