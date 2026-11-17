@@ -1,6 +1,6 @@
 import pygame.font 
 #from typing import TYPE_CHECKING
- #from alien_invasion import AlienInvasion
+ #from ant_defence import AntDefence
 
 
  # if TYPE_CHECKING:

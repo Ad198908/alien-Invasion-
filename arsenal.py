@@ -15,12 +15,12 @@ from bullet import Bullet
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from ant_defence import AntDefence
     
 class Arsenal:
     """ A class to manage all bullets fired by a ship"""
 
-    def __init__(self,game:'AlienInvasion'):
+    def __init__(self,game:'AntDefence'):
         self.game = game
         self.settings = game.settings
         self.arsenal = pygame.sprite.Group()

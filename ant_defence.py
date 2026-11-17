@@ -20,7 +20,7 @@ from arsenal import Arsenal
 #from hud import HUD
 
 
-class AlienInvasion:
+class AntDefence:
     """
       A class to manage game assets resorces, and beheavior.
     """
@@ -194,7 +194,7 @@ class AlienInvasion:
 
 
 if __name__ == '__main__':
-    game = AlienInvasion()
+    game = AntDefence()
     game.run_game()
     
 

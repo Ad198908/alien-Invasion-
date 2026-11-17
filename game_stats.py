@@ -4,13 +4,13 @@ import json
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-   from alien_invasion import AlienInvasion
+   from ant_defence import AntDefence
    
 
 
 class GameStats():
 
-    def __init__(self, game: 'AlienInvasion'):
+    def __init__(self, game: 'AntDefence'):
        self.game = game
        self.settings = game.settings
        self.max_score = 0

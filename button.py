@@ -3,11 +3,11 @@ import pygame.font
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from ant_defence import AntDefence
 
 class Button:
 
-    def __init__(self,game: 'AlienInvasion',msg):
+    def __init__(self,game: 'AntDefence',msg):
         self.game = game
         self.screen = game.screen
         self.boundaries = game.screen.get_rect()

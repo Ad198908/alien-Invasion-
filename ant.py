@@ -11,13 +11,13 @@ import pygame
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-   from alien_invasion import AlienInvasion
+   from ant_defence import AntDefence
    from arsenal import arsenal
 
 
 class Ant:
     """ A class to store and manage the player's ant and movement"""
-    def __init__(self,game:'AlienInvasion', arsenal: 'arsenal'):
+    def __init__(self,game:'AntDefence', arsenal: 'arsenal'):
         self.game = game
         self.settings = game.settings
         self.screen = game.screen

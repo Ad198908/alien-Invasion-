@@ -3,12 +3,12 @@ from typing import TYPE_CHECKING
 from alien import Alien
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from ant_defence import AntDefence
     from arsenal import Arsenal
     
 class Alienfleet:
-    def __init__(self,game: 'AlienInvasion'):
-        
+    def __init__(self,game: 'AntDefence'):
+
         # self.create_fleet ()
         self.game = game
         self.settings = game.settings

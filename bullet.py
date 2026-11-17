@@ -10,12 +10,12 @@ from pygame.sprite import Sprite
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from ant_defence import AntDefence
 
 class Bullet(Sprite):
     """ A class to manage bullets and fired from the ship."""
 
-    def __init__(self,game:'AlienInvasion'):
+    def __init__(self,game:'AntDefence'):
         super().__init__()
         self.screen = game.screen
         self.settings = game.settings
