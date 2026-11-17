@@ -56,7 +56,7 @@ class AlienInvasion:
         # self.alien_fleet.create_fleet()
 
        # self.play_button = Button(self, 'play')
-        self.game_active = False
+        self.game_active = True
         # self.alien = Alien(self,10 ,10)
 
     def run_game(self):
