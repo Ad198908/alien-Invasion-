@@ -19,7 +19,7 @@ class GameStats():
 
     def __init__saved_scores(self):
         self.path = self.settings.scores_file
-        if self.path.exists() and self.path.stat.__sizeof__() > 80:
+        if self.path.exists() and self.path.stat.__sizeof__() > 20:
             contents = self.path.read_text()
             
             scores = json.loads(contents)
@@ -79,7 +79,7 @@ class GameStats():
 
     def update_level(self):
         self.level += 1
-        #print(self.level)
+        print(self.level)
         
         
 
